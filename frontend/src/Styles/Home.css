@@ -1,0 +1,56 @@
+.container {
+    width: 1170px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: auto;
+}
+
+
+.landing-page {
+    position: relative;
+    background-color: var(--helping-color);
+}
+
+
+
+
+.landing-page .info {
+    width: 35%;
+    float: left;
+    margin-top: 130px;
+}
+
+.landing-page .info h1 {
+    font-size: 44px;
+    margin: 0 0 20px;
+    line-height: 1.4;
+    color: var(--neutral-color);
+}
+
+.landing-page .info p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 15px;
+    color: var(--neutral-color);
+}
+
+.landing-page .info button {
+    border: 0;
+    border-radius: 20px;
+    padding: 12px 30px;
+    margin-top: 30px;
+    cursor: pointer;
+    color: var(--helping-color);
+    background-color: var(--secondary-color);
+}
+
+.landing-page .image {
+    width: 50%;
+    float: right;
+    margin-top: 35px;
+}
+
+.landing-page .image img {
+    max-width: 100%;
+}
+

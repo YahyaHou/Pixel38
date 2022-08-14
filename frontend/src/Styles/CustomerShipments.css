@@ -1,0 +1,15 @@
+.dashboard-header-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dashboard-header{
+    background-color: var(--neutral-color);
+    padding: 10px;
+}
+.dashboard-header-heading{
+    font-size: 1.2rem;
+    font-family: "Poppins",sans-serif;
+    color: var(--primary-color);
+    font-weight: 600;
+}
