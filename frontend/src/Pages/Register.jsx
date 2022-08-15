@@ -14,12 +14,10 @@ import { useState } from 'react';
 import Cookies from "universal-cookie";
 import axios from "axios";
 import Swal from "sweetalert2";
-import {useNavigate} from "react-router-dom";
 
 const theme = createTheme();
 
 export default function Register() {
-  const navigate = useNavigate();
 
   const [register,setRegister] = useState({
     
@@ -45,18 +43,23 @@ export default function Register() {
       email : register.email,
       password : register.password
     }
+
     axios.post('http://localhost:8000/api/register',customerData)
     .then((res)=>{
+      if(res.status === 201){
       const cookies = new Cookies();
       const token = cookies.set("TOKEN", res.data.token, { path: "/" });
-      navigate('/dashboard/customer');
+      window.location.href('/dashboard/customer');
+
       Swal.fire({
         icon: "success",
-        title: "Logged In Successfully",
+        title: "Registered Successfully",
         showConfirmButton: false,
         timer: 1500,
-      });
+       });
+       }
     })
+    
     .catch((err)=>{
       if(err.response.status === 400){
         Swal.fire({
@@ -64,15 +67,7 @@ export default function Register() {
           title: "All Fields Are Required",
           showConfirmButton: false,
           timer: 1500,
-        });
-        
-      }else if(err.response.status === 500){
-        Swal.fire({
-          icon: "error",
-          title: "something went wrong try again",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+        }); 
       }
     });
   }
